@@ -2,13 +2,9 @@ namespace LCOM.Calc
 {
     public class Display
     {
-        public Display()
+        public static void PrintLCOM(decimal value)
         {
-            
-        }
-        public void Hello()
-        {
-            Console.WriteLine("Hello World! God bless you!");
+            Console.WriteLine($"\nThe result of LCOM equation is: {value}\n");
         }
     }
 }

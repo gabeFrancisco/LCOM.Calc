@@ -6,12 +6,9 @@
         {
             var props = new ClassProps(4, 5, [1,3,2,5]);
 
-            Calculator.Calculate(props);
+            decimal value = Calculator.Calculate(props);
 
-
-            // var display = new Display();
-
-            // display.Hello();
+            Display.PrintLCOM(value);
         }
     }
 

@@ -3,19 +3,17 @@ namespace LCOM.Calc
     public static class Calculator
     {
         private static decimal AttributeSum = 0;
-        public static void Calculate(ClassProps classProps)
+        public static decimal Calculate(ClassProps classProps)
         {
-            foreach (var props in classProps.AttributesInMethods)
+            for (int i = 0; i < classProps.AttributesInMethods.Length; i++)
             {
-                AttributeSum += classProps.Methods - props;
+                AttributeSum += classProps.Methods - classProps.AttributesInMethods[i];
             }
 
             int denominator = classProps.Attributes * classProps.Methods;
-            Console.WriteLine(AttributeSum);
-            Console.WriteLine(denominator);
             decimal result = AttributeSum / denominator;
 
-            Console.WriteLine($"\nValor da equação = {result}");
+            return result;
         }
     }
 }
