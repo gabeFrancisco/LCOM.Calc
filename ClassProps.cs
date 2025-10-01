@@ -2,23 +2,21 @@ namespace LCOM.Calc
 {
     public class ClassProps
     {
-        private int _attributes;
-        private int _methods;
-        private Dictionary<int, int> _attributesInMethods = new Dictionary<int, int>();
+        public int Attributes { get; private set; }
+        public int Methods { get; private set; }
+        public int[] AttributesInMethods = [];
 
-        public ClassProps(int attributes, int methods, Dictionary<int, int> attributesInMethods)
+        public ClassProps(int attributes, int methods, int[] attributesInMethods)
         {
-            _attributes = attributes;
-            _methods = methods;
+            Attributes = attributes;
+            Methods = methods;
 
-            if (attributesInMethods.Count != attributes)
+            if (attributesInMethods.Length != attributes)
             {
                 throw new IndexOutOfRangeException("The dictionary must be the same count of attributes!");
             }
 
-            _attributesInMethods = attributesInMethods;
+            AttributesInMethods = attributesInMethods;
         }
-
-
     }
 }

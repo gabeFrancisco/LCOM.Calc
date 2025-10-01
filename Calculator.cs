@@ -2,9 +2,20 @@ namespace LCOM.Calc
 {
     public static class Calculator
     {
-        public static Double Calculate(ClassProps classProps)
+        private static decimal AttributeSum = 0;
+        public static void Calculate(ClassProps classProps)
         {
-            return 0;
+            foreach (var props in classProps.AttributesInMethods)
+            {
+                AttributeSum += classProps.Methods - props;
+            }
+
+            int denominator = classProps.Attributes * classProps.Methods;
+            Console.WriteLine(AttributeSum);
+            Console.WriteLine(denominator);
+            decimal result = AttributeSum / denominator;
+
+            Console.WriteLine($"\nValor da equação = {result}");
         }
     }
 }
