@@ -6,7 +6,7 @@ namespace LCOM.Calc
     {
         public static void PrintLCOM(decimal value)
         {
-            Console.WriteLine($"\nThe result of LCOM equation is: {value}\n");
+            Console.WriteLine($"\nThe result of LCOM equation is: {value.ToString("f2")}\n");
         }
 
         public static ClassProps InputValues()
