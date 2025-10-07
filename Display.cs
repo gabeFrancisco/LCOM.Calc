@@ -9,7 +9,7 @@ namespace LCOM.Calc
             Console.WriteLine($"\nThe result of LCOM equation is: {value}\n");
         }
 
-        public static dynamic InputValues()
+        public static ClassProps InputValues()
         {
             int attributes, methods;
 
@@ -20,7 +20,6 @@ namespace LCOM.Calc
             methods = int.Parse(Console.ReadLine()!);
 
             int[] attributesInMethods = new int[attributes];
-            Console.WriteLine(JsonSerializer.Serialize(attributesInMethods));
 
             for (int i = 0; i < attributes; i++)
             {
@@ -28,12 +27,7 @@ namespace LCOM.Calc
                 attributesInMethods[i] = int.Parse(Console.ReadLine()!);
             }
 
-            return new
-            {
-                attributes,
-                methods,
-                attributesInMethods
-            };
+            return new ClassProps(attributes, methods, attributesInMethods);
         }
     }
 }

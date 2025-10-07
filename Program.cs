@@ -6,11 +6,8 @@ namespace LCOM.Calc
     {
         static void Main(string[] args)
         {
-            var props = new ClassProps(4, 5, [1,3,2,5]);
-
-            decimal value = Calculator.Calculate(props);
             var result = Display.InputValues();
-            Console.WriteLine(JsonSerializer.Serialize(result));
+            decimal value = Calculator.Calculate(result);
             Display.PrintLCOM(value);
         }
     }
