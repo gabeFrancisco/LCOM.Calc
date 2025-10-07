@@ -25,6 +25,10 @@ namespace LCOM.Calc
             {
                 Console.Write($"\nAttribute n#{i + 1} appears in how many methods?");
                 attributesInMethods[i] = int.Parse(Console.ReadLine()!);
+                if (attributesInMethods[i] > methods)
+                {
+                    throw new IndexOutOfRangeException("You tipped an attribute count greather than the class methods number!");
+                }
             }
 
             return new ClassProps(attributes, methods, attributesInMethods);
