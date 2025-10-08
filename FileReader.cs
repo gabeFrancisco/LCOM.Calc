@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Spectre.Console;
 
 namespace LCOM.Calc
@@ -12,13 +8,11 @@ namespace LCOM.Calc
 
         public static void Read()
         {
-            using (var reader = new StreamReader(_path))
+            using var reader = new StreamReader(_path);
+            while (!reader.EndOfStream)
             {
-                while (!reader.EndOfStream)
-                {
-                    string line = reader.ReadLine()!;
-                    AnsiConsole.WriteLine(line);
-                }
+                string line = reader.ReadLine()!;
+                AnsiConsole.WriteLine(line);
             }
         }
     }
