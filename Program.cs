@@ -1,9 +1,15 @@
-﻿namespace LCOM.Calc
+﻿using Spectre.Console;
+
+namespace LCOM.Calc
 {
     public class LCOM
     {
         static void Main(string[] args)
         {
+            AnsiConsole.Write(
+                new FigletText("LCOM.Calc").LeftJustified().Color(Color.Blue)
+            );
+            
             try
             {
                 var result = Display.InputValues();
