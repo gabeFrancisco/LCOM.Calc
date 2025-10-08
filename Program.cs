@@ -9,7 +9,9 @@ namespace LCOM.Calc
             AnsiConsole.Write(
                 new FigletText("LCOM.Calc").LeftJustified().Color(Color.Blue)
             );
-            
+
+            AnsiConsole.WriteLine(Display.OptionsMenu());
+
             try
             {
                 var result = Display.InputValues();
@@ -18,11 +20,15 @@ namespace LCOM.Calc
             }
             catch (IndexOutOfRangeException ex)
             {
-                Console.WriteLine(ex.Message);
+                AnsiConsole.WriteLine(ex.Message);
                 Thread.Sleep(1000);
                 Console.WriteLine("\nLet's start again!\n\n");
                 Thread.Sleep(100);
                 Main([]);
+            }
+            catch (Exception ex)
+            {
+                AnsiConsole.WriteException(ex);
             }
         }
     }

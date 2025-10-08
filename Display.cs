@@ -1,4 +1,5 @@
 using System.Text.Json;
+using Spectre.Console;
 
 namespace LCOM.Calc
 {
@@ -7,6 +8,21 @@ namespace LCOM.Calc
         public static void PrintLCOM(decimal value)
         {
             Console.WriteLine($"\nThe result of LCOM equation is: {value.ToString("f2")}\n");
+        }
+
+        public static int OptionsMenu()
+        {
+            var value = AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                    .Title("Choose an [green]option[/] bellow: ")
+                    .PageSize(7)
+                    .AddChoices(new[]{
+                        "1 - Select a directory or file path",
+                        "2 - Insert data manually"
+                    })
+            );
+
+            return int.Parse(value[..1]);
         }
 
         public static ClassProps InputValues()
