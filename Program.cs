@@ -14,6 +14,7 @@ namespace LCOM.Calc
 
             try
             {
+                FileReader.Read();
                 var result = Display.InputValues();
                 decimal value = Calculator.Calculate(result);
                 Display.PrintLCOM(value);
